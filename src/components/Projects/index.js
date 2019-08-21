@@ -7,7 +7,7 @@ import Inner from "../../elements/inner"
 import Content from "../../elements/content"
 import Shapes from "./Shapes"
 import ProjectsSlide from "./ProjectsSlide"
-import ProjectsContent from "./ProjectsContent"
+// import ProjectsContent from "./ProjectsContent"
 import { ParallaxLayer } from "react-spring/renderprops-addons.cjs"
 
 class Projects extends React.Component {
@@ -68,12 +68,12 @@ class Projects extends React.Component {
             offset={offset + 0.25}
             factor={2}
           >
-            <ProjectsContent
+            {/* <ProjectsContent
               index={index}
               direction={direction}
               handleNext={this.handleNext}
               handlePrev={this.handlePrev}
-            />
+            /> */}
           </ParallaxLayer>
         </Content>
         <Shapes offset={offset} />
