@@ -4,7 +4,7 @@ import Divider from "../../elements/divider"
 import Inner from "../../elements/inner"
 import Content from "../../elements/content"
 import Shapes from "./Shapes"
-import RadialChart from "./RadialChart"
+// import RadiSalChart from "./RadialChart"
 import Strengths from "./Strengths"
 import { Styled } from "theme-ui"
 
@@ -52,7 +52,7 @@ const Skills = ({ offset }) => (
               justifyContent: "center",
             }}
           >
-            <RadialChart />
+            {/* <RadialChart /> */}
           </main>
         </div>
       </Inner>
