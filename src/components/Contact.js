@@ -7,7 +7,7 @@ import Content from "../elements/content"
 import Shape from "./Shape"
 import { UpDown, UpDownWide, waveAnimation } from "../styles/animations"
 import ContactMDX from "../sections/contact.mdx"
-import Footer from "./footer"
+import Footer from "./Footer"
 
 const InnerWave = styled.div`
   path {
