@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { jsx } from "theme-ui"
 import { Transition } from "react-spring/renderprops"
 import { animated, useSpring } from "react-spring"
@@ -74,14 +74,17 @@ const TextScreen = ({ handleNext, handlePrev }) => {
 
 const textScreens = [TextScreen, TextScreen, TextScreen]
 
-const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
-const trans1 = (x, y) => `translate3d(${x / 30}px,${y / 20}px,0)`
-
 const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
   const [props, set] = useSpring(() => ({
     xy: [0, 0],
     config: { mass: 10, tension: 550, friction: 140 },
   }))
+  const [width] = useState(window.innerWidth);
+  const [height] = useState(window.innerHeight);
+
+  const calc = (x, y) => [x - width / 2, y - height / 2];
+  const trans1 = (x, y) => `translate3d(${x / 30}px,${y / 20}px,0)`;
+
   return (
     <div
       sx={{
@@ -90,6 +93,7 @@ const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
         borderRadius: "lg",
       }}
     >
+    {console.log(width)}
       <div
         sx={{ position: "relative" }}
         onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
@@ -145,7 +149,6 @@ const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
         >
           {index => props => (
             <animated.div style={{ ...props }}>
-              {/* {React.createElement(textScreens[index](handleNext, handlePrev))} */}
               {textScreens.map((component, idx) => {
                 if (idx === index) {
                   return (

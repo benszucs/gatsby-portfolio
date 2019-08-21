@@ -2,8 +2,6 @@
 import { jsx } from "theme-ui"
 
 const Buttons = ({ handleNext, handlePrev }) => {
-  console.log("handleNext", handleNext)
-  console.log("handlePrev", handlePrev)
   return (
     <div
       sx={{
