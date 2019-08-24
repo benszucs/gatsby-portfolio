@@ -23,16 +23,21 @@ const copy = [
 const Strengths = () => {
   return (
     <div>
-      {copy.map(section => (
-        <>
+      {copy.map((section, i) => (
+        <div sx={{
+          backgroundColor: 'rgba(255,255,255, 0.8)',
+          p: 2,
+          borderRadius: 'lg',
+          mb: i !== 2 ? 3 : 0,
+        }}>
           <div
             sx={{
               textTransform: `uppercase`,
               letterSpacing: `wide`,
-              pt: 4,
               fontSize: [1, 2],
               fontWeight: `medium`,
               lineHeight: 1,
+              pb: 1
             }}
           >
             {section.title}
@@ -40,7 +45,6 @@ const Strengths = () => {
           <div
             sx={{
               letterSpacing: `normal`,
-              pt: 1,
               fontSize: [1],
               fontWeight: `small`,
               lineHeight: 1.5,
@@ -48,7 +52,7 @@ const Strengths = () => {
           >
             {section.text}
           </div>
-        </>
+        </div>
       ))}
     </div>
   )

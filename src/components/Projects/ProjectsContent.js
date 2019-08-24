@@ -89,7 +89,7 @@ const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
     <div
       sx={{
         maxWidth: "500px",
-        backgroundColor: "background",
+        backgroundColor: "rgba(255,255,255, 0.8)",
         borderRadius: "lg",
       }}
     >
