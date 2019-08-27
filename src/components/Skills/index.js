@@ -11,12 +11,12 @@ import { Styled } from "theme-ui"
 
 const Skills = ({ offset }) => (
   <div>
-    <Divider
-      bg="divider"
+    {/* <Divider
+      bg="background"
       clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)"
       speed={0.2}
       offset={offset}
-    />
+    /> */}
     <Shapes offset={offset} />
     <Content speed={0.4} offset={offset}>
       <Inner>

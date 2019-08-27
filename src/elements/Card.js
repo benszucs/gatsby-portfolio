@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from 'react'
 import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
 import { FaCaretRight } from "react-icons/fa"
