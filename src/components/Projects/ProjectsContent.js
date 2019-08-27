@@ -169,6 +169,7 @@ const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
                     />
                   )
                 }
+                return ''
               })}
             </animated.div>
           )}
