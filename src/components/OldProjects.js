@@ -18,7 +18,7 @@ const Projects = ({ offset }) => (
     />
     <Content speed={0.4} offset={offset + 0.2} factor={2}>
       <Inner>
-        <div
+        {/* <div
           sx={{
             display: `grid`,
             gridGap: [4, 4, 4, 5],
@@ -27,7 +27,7 @@ const Projects = ({ offset }) => (
           }}
         >
           <ProjectsMDX />
-        </div>
+        </div> */}
       </Inner>
     </Content>
     <Divider speed={0.1} offset={offset} factor={2}>

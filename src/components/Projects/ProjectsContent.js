@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useEffect, useState } from "react"
+import { useState } from "react"
 import { jsx } from "theme-ui"
 import { Transition } from "react-spring/renderprops"
 import { animated, useSpring } from "react-spring"
@@ -34,17 +34,20 @@ const TextScreen = ({ handleNext, handlePrev }) => {
         }}
       >
         {["JAMstack", "GatsbyJS", "Contentful", "Styled Components", "CMS"].map(
-          pill => (
-            <div
-              sx={{
-                variant: `pills`,
-                fontWeight: `semibold`,
-                display: `block`,
-              }}
-            >
-              {pill}
-            </div>
-          )
+          (pill, idx) => {
+            return (
+              <div
+                key={idx}
+                sx={{
+                  variant: `pills`,
+                  fontWeight: `semibold`,
+                  display: `block`,
+                }}
+              >
+                {pill}
+              </div>
+            )
+          }
         )}
       </div>
       <div
@@ -55,7 +58,13 @@ const TextScreen = ({ handleNext, handlePrev }) => {
         A fancy-schmancy project utilising all the hyped up modern tech you
         could want, but not necessarily need.
       </div>
-      <div sx={{ display: "flex", flexDirection: "row", justifyContent: 'space-between' }}>
+      <div
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
         <Buttons handleNext={handleNext} handlePrev={handlePrev} />
         <button
           sx={{
@@ -79,21 +88,20 @@ const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
     xy: [0, 0],
     config: { mass: 10, tension: 550, friction: 140 },
   }))
-  const [width] = useState(window.innerWidth);
-  const [height] = useState(window.innerHeight);
+  const [width] = useState(window.innerWidth)
+  const [height] = useState(window.innerHeight)
 
-  const calc = (x, y) => [x - width / 2, y - height / 2];
-  const trans1 = (x, y) => `translate3d(${x / 30}px,${y / 20}px,0)`;
+  const calc = (x, y) => [x - width / 2, y - height / 2]
+  const trans1 = (x, y) => `translate3d(${x / 30}px,${y / 20}px,0)`
 
   return (
     <div
       sx={{
         maxWidth: "500px",
-        backgroundColor: "rgba(255,255,255, 0.8)",
+        backgroundColor: `background`,
         borderRadius: "lg",
       }}
     >
-    {console.log(width)}
       <div
         sx={{ position: "relative" }}
         onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
@@ -104,7 +112,9 @@ const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
             position: "absolute",
             left: "-10px",
             top: "10px",
-            border: "#eee8d5 solid 2px",
+            borderWidth: `1px`,
+            borderStyle: `solid`,
+            borderColor: `primary`,
             minWidth: "500px",
             minHeight: "100%",
             borderRadius: "lg",
@@ -153,6 +163,7 @@ const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
                 if (idx === index) {
                   return (
                     <TextScreen
+                      key={idx}
                       handleNext={handleNext}
                       handlePrev={handlePrev}
                     />

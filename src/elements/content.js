@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types"
 import { css } from "theme-ui"
 import { ParallaxLayer } from "react-spring/renderprops-addons.cjs"
 
@@ -22,9 +22,9 @@ const Content = ({ speed, offset, children, factor }) => (
 )
 
 Content.propTypes = {
-    speed: PropTypes.number,
-    offset: PropTypes.number,
-    factor: PropTypes.number
+  speed: PropTypes.number,
+  offset: PropTypes.number,
+  factor: PropTypes.number,
 }
 
 export default Content

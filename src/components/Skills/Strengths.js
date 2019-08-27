@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from "react"
 import { jsx } from "theme-ui"
 
 const copy = [
@@ -23,13 +22,22 @@ const copy = [
 const Strengths = () => {
   return (
     <div>
-      {copy.map((section, i) => (
-        <div sx={{
-          backgroundColor: 'rgba(255,255,255, 0.8)',
-          p: 2,
-          borderRadius: 'lg',
-          mb: i !== 2 ? 3 : 0,
-        }}>
+      {copy.map((section, idx) => (
+        <div
+          key={idx}
+          sx={{
+            backgroundColor: `background`,
+            p: 2,
+            borderRadius: "lg",
+            mb: idx !== 2 ? 4 : 0,
+            boxShadow: "lg",
+            transition: `all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important`,
+            "&:hover": {
+              transform: `translateY(-5px)`,
+              boxShadow: `xl`,
+            },
+          }}
+        >
           <div
             sx={{
               textTransform: `uppercase`,
@@ -37,7 +45,7 @@ const Strengths = () => {
               fontSize: [1, 2],
               fontWeight: `medium`,
               lineHeight: 1,
-              pb: 1
+              pb: 2,
             }}
           >
             {section.title}

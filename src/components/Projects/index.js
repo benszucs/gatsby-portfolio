@@ -32,7 +32,7 @@ class Projects extends React.Component {
     return (
       <div sx={{ position: "relative !important" }}>
         <Divider
-          bg="linear-gradient(to right, #8D8464 0%, #D3CBB7 100%)"
+          bg="divider"
           clipPath="polygon(0 15%, 100% 25%, 100% 85%, 0 75%)"
           speed={-0.2}
           offset={1}
@@ -43,7 +43,7 @@ class Projects extends React.Component {
             <Styled.h2
               sx={{
                 mb: 4,
-                color: "white",
+                color: "heading",
               }}
             >
               Projects

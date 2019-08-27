@@ -5,7 +5,7 @@ import Inner from "../../elements/inner"
 import Content from "../../elements/content"
 import Shapes from "./Shapes"
 // import RadiSalChart from "./RadialChart"
-import RadarChart from './RadarChart'
+import RadarChart from "./RadarChart"
 import Strengths from "./Strengths"
 import { Styled } from "theme-ui"
 
@@ -37,7 +37,7 @@ const Skills = ({ offset }) => (
             <Styled.h2
               sx={{
                 color: "heading",
-                mb: 4
+                mb: 4,
               }}
             >
               Strengths

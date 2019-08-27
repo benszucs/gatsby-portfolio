@@ -13,7 +13,7 @@ const Footer = () => {
   const toggleColorMode = (e) => {
     setColorMode(isDark ? `light` : `dark`)
   }
-
+  console.log(colorMode)
   return (
     <ThemeFooter>
       <button
