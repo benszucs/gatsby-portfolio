@@ -6,11 +6,12 @@ import {
   useColorMode,
   jsx,
 } from "theme-ui"
+import { FaGithubAlt } from "react-icons/fa"
 
 const Footer = () => {
   const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
-  const toggleColorMode = (e) => {
+  const toggleColorMode = e => {
     setColorMode(isDark ? `light` : `dark`)
   }
   console.log(colorMode)
@@ -18,11 +19,12 @@ const Footer = () => {
     <ThemeFooter>
       <button
         sx={{
-          variant: `buttons.toggle`,
+          variant: `buttons.styled`,
           fontWeight: `semibold`,
           display: `block`,
           mx: `auto`,
           mb: 3,
+          color: isDark ? `white` : `text`,
         }}
         onClick={toggleColorMode}
         type="button"
@@ -32,19 +34,21 @@ const Footer = () => {
       </button>
       Copyright &copy; {new Date().getFullYear()}. All rights reserved.
       <br />
-      <Flex sx={{ justifyContent: `center`, alignItems: `center`, mt: 3 }}>
-        <img
-          width="30"
-          height="30"
-          src="https://img.lekoarts.de/gatsby/logo_w30.png"
-          alt="LekoArts Logo"
-        />
-        {` `}
+      <Flex
+        sx={{
+          display: `flex`,
+          justifyContent: `center`,
+          alignItems: `center`,
+          mt: 3,
+        }}
+      >
         <Styled.a
-          sx={{ color: `text`, fontWeight: `semibold`, ml: 2 }}
-          href="https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-cara"
+          sx={{ color: `text`, fontWeight: `semibold`, }}
+          href="https://github.com/benszucs/gatsby-portfolio"
         >
-          Theme by LekoArts
+          <FaGithubAlt sx={{ transform: `translateY(2px)` }}/>
+          {` `}
+          Source code
         </Styled.a>
       </Flex>
     </ThemeFooter>

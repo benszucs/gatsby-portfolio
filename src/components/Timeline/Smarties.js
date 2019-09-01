@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import PropTypes from 'prop-types'
 import { useColorMode, jsx } from "theme-ui"
 
 const dates = [
@@ -49,7 +50,6 @@ const Smarties = ({ index, handleToggleIndex }) => {
                   if(isDark) return `text`
                   if(!isDark && index === i) return `white`
               },
-              // color: index === i ? 'divider' : `text`,
               backgroundColor: index === i ? `primary` : `background`,
             }}
           >
@@ -59,6 +59,11 @@ const Smarties = ({ index, handleToggleIndex }) => {
       ))}
     </ul>
   )
+}
+
+Smarties.propTypes = {
+  index: PropTypes.number.isRequired,
+  handleToggleIndex: PropTypes.func.isRequired
 }
 
 export default Smarties

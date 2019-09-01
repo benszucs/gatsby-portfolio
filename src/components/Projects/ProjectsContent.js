@@ -1,182 +1,62 @@
 /** @jsx jsx */
-import { useState } from "react"
+import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
-import { Transition } from "react-spring/renderprops"
-import { animated, useSpring } from "react-spring"
-import Buttons from "./Buttons"
+import AnimCard from "../../elements/ui/animateCard"
+import Card from "../../elements/ui/Card"
 
-const TextScreen = ({ handleNext, handlePrev }) => {
+const data = [
+  {
+    title: "Project 1",
+    subtitle: [
+      "A fancy-schmancy project utilising all the hyped up modern tech you could want, but not necessarily need.",
+    ],
+    pills: ["JAMstack", "GatsbyJS", "Contentful", "Styled Components", "CMS"],
+  },
+  {
+    title: "Project 2",
+    subtitle: [
+      "A fancy-schmancy project utilising all the hyped up modern tech you could want, but not necessarily need.",
+    ],
+    pills: ["JAMstack", "GatsbyJS", "Contentful", "Styled Components", "CMS"],
+  },
+  {
+    title: "Project 3",
+    subtitle: [
+      "A fancy-schmancy project utilising all the hyped up modern tech you could want, but not necessarily need.",
+    ],
+    pills: ["JAMstack", "GatsbyJS", "Contentful", "Styled Components", "CMS"],
+  },
+]
+
+const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
   return (
-    <div
-      sx={{
-        p: 3,
-        boxShadow: "xl",
-      }}
-    >
-      <div
-        sx={{
-          textTransform: `uppercase`,
-          letterSpacing: `wide`,
-          pb: 2,
-          fontSize: [4, 5],
-          fontWeight: `medium`,
-          lineHeight: 1,
-        }}
-      >
-        Project Title
-      </div>
-      <div
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          pb: 2,
-        }}
-      >
-        {["JAMstack", "GatsbyJS", "Contentful", "Styled Components", "CMS"].map(
-          (pill, idx) => {
-            return (
-              <div
-                key={idx}
-                sx={{
-                  variant: `pills`,
-                  fontWeight: `semibold`,
-                  display: `block`,
-                }}
-              >
-                {pill}
-              </div>
-            )
-          }
-        )}
-      </div>
-      <div
-        sx={{
-          opacity: 0.75,
-        }}
-      >
-        A fancy-schmancy project utilising all the hyped up modern tech you
-        could want, but not necessarily need.
-      </div>
-      <div
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      >
-        <Buttons handleNext={handleNext} handlePrev={handlePrev} />
-        <button
-          sx={{
-            variant: `buttons.toggle`,
-            fontWeight: `semibold`,
-            ml: 0,
-            mt: 3,
-          }}
-        >
-          Demo
-        </button>
-      </div>
-    </div>
+    <AnimCard index={index} direction={direction} speed="20">
+      {data.map((item, idx) => {
+        if (index === idx) {
+          return (
+            <Card
+              key={idx}
+              title={item.title}
+              subtitle={item.subtitle}
+              pills={item.pills}
+              buttons
+              bg="background"
+              handlePrev={handlePrev}
+              handleNext={handleNext}
+            />
+          )
+        }
+        return ""
+      })}
+    </AnimCard>
   )
 }
 
-const textScreens = [TextScreen, TextScreen, TextScreen]
-
-const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
-  const [props, set] = useSpring(() => ({
-    xy: [0, 0],
-    config: { mass: 10, tension: 550, friction: 140 },
-  }))
-  const [width] = useState(window.innerWidth)
-  const [height] = useState(window.innerHeight)
-
-  const calc = (x, y) => [x - width / 2, y - height / 2]
-  const trans1 = (x, y) => `translate3d(${x / 30}px,${y / 20}px,0)`
-
-  return (
-    <div
-      sx={{
-        maxWidth: "500px",
-        backgroundColor: `background`,
-        borderRadius: "lg",
-      }}
-    >
-      <div
-        sx={{ position: "relative" }}
-        onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
-      >
-        <animated.div
-          style={{ transform: props.xy.interpolate(trans1) }}
-          sx={{
-            position: "absolute",
-            left: "-10px",
-            top: "10px",
-            borderWidth: `1px`,
-            borderStyle: `solid`,
-            borderColor: `primary`,
-            minWidth: "500px",
-            minHeight: "100%",
-            borderRadius: "lg",
-            display: ["none", "none", "none", "block"],
-          }}
-        />
-        <Transition
-          reset
-          unique
-          items={index}
-          from={
-            direction === "next"
-              ? {
-                  opacity: 0,
-                  display: "none",
-                  transform: "translate3d(10%, 0 ,0)",
-                }
-              : {
-                  opacity: 0,
-                  display: "none",
-                  transform: "translate3d(-5%, 0 ,0)",
-                }
-          }
-          enter={{
-            opacity: 1,
-            display: "block",
-            transform: "translate3d(0%, 0, 0)",
-          }}
-          leave={
-            direction === "next"
-              ? {
-                  opacity: 0,
-                  display: "none",
-                  transform: "translate3d(-5%, 0 ,0)",
-                }
-              : {
-                  opacity: 0,
-                  display: "none",
-                  transform: "translate3d(10%, 0 ,0)",
-                }
-          }
-        >
-          {index => props => (
-            <animated.div style={{ ...props }}>
-              {textScreens.map((component, idx) => {
-                if (idx === index) {
-                  return (
-                    <TextScreen
-                      key={idx}
-                      handleNext={handleNext}
-                      handlePrev={handlePrev}
-                    />
-                  )
-                }
-                return ''
-              })}
-            </animated.div>
-          )}
-        </Transition>
-      </div>
-    </div>
-  )
+ProjectsContent.propTypes = {
+  index: PropTypes.number.isRequired,
+  direction: PropTypes.string.isRequired,
+  handleNext: PropTypes.func.isRequired,
+  handlePrev: PropTypes.func.isRequired,
 }
 
 export default ProjectsContent

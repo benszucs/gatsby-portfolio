@@ -1,11 +1,13 @@
 /** @jsx jsx */
 import React from "react"
+import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
 import Divider from "../../elements/divider"
 import Inner from "../../elements/inner"
 import Content from "../../elements/content"
 import Shapes from "./Shapes"
 import TimelineComp from "./TimelineComp"
+import Title from "../../elements/ui/Title"
 
 class Timeline extends React.Component {
   state = {
@@ -27,10 +29,12 @@ class Timeline extends React.Component {
           clipPath="polygon(0 82%, 100% 94%, 100% 16%, 0 4%)"
           speed={-0.2}
           offset={offset}
+          factor={1.5}
         />
         <Shapes offset={offset} />
-        <Content speed={0.4} offset={offset}>
+        <Content speed={0.4} offset={offset} factor={1.5}>
           <Inner>
+            <Title title="Timeline" />
             <TimelineComp
               handleToggleIndex={this.handleToggleIndex}
               index={this.state.index}
@@ -40,6 +44,10 @@ class Timeline extends React.Component {
       </div>
     )
   }
+}
+
+Timeline.propTypes = {
+  offset: PropTypes.number.isRequired,
 }
 
 export default Timeline

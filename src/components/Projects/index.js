@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import React from "react"
+import PropTypes from 'prop-types'
 import { jsx } from "theme-ui"
-import { Styled } from "theme-ui"
 import Divider from "../../elements/divider"
 import Inner from "../../elements/inner"
 import Content from "../../elements/content"
+import Title from "../../elements/ui/Title"
 import Shapes from "./Shapes"
 import ProjectsSlide from "./ProjectsSlide"
 import ProjectsContent from "./ProjectsContent"
@@ -35,24 +36,16 @@ class Projects extends React.Component {
           bg="divider"
           clipPath="polygon(0 15%, 100% 25%, 100% 85%, 0 75%)"
           speed={-0.2}
-          offset={1}
+          offset={offset}
           factor={2}
         />
         <Content speed={0.4} offset={offset + 0.2} factor={2}>
           <Inner>
-            <Styled.h2
-              sx={{
-                mb: 4,
-                color: "heading",
-              }}
-            >
-              Projects
-            </Styled.h2>
+            <Title title="Projects" />
             <ProjectsSlide
               index={index}
               direction={direction}
               handleNext={this.handleNext}
-              handlePrev={this.handlePrev}
             />
           </Inner>
           <ParallaxLayer
@@ -80,6 +73,11 @@ class Projects extends React.Component {
       </div>
     )
   }
+}
+
+
+Projects.propTypes = {
+  offset: PropTypes.number.isRequired
 }
 
 export default Projects

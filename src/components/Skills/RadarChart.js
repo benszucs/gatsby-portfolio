@@ -61,7 +61,7 @@ class Chart extends PureComponent {
         data={data}
       >
         <PolarGrid />
-        <PolarAngleAxis dataKey="subject" tick={{fill: tick}} />
+        <PolarAngleAxis dataKey="subject" tick={{ fill: tick }} />
         <PolarRadiusAxis />
         <Radar
           name="Mike"
@@ -81,7 +81,7 @@ const ChartContainer = () => {
 
   return (
     <Chart
-      fill={isDark ? `#002B36` : `#eee8d5`}
+      fill={isDark ? `#00212B` : `#fdf6e3`}
       stroke={isDark ? `#196E6C` : `#b58900`}
       tick={isDark ? `white` : `black`}
     />

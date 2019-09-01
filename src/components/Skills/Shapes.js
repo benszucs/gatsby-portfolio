@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import PropTypes from 'prop-types'
 import { jsx } from "theme-ui"
 import Divider from "../../elements/divider"
 import Shape from "../Shape"
@@ -23,7 +24,12 @@ const SkillsShapes = ({ offset }) => (
       <Shape icon="box" width={4} color="icon_red" left="10%" top="10%" />
       <Shape icon="box" width={8} color="icon_red" left="20%" top="30%" />
       <Shape icon="hexa" width={6} stroke color="icon_green" left="80%" top="70%" />
+      <Shape icon="hexa" width={6} stroke color="icon_red" left="80%" top="100%" />
     </Divider>
 )
+
+SkillsShapes.propTypes = {
+  offset: PropTypes.number.isRequired
+}
 
 export default SkillsShapes

@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import Divider from "../elements/divider"
-import Inner from "../elements/inner"
-import Content from "../elements/content"
-import Shape from "./Shape"
-import { UpDown, UpDownWide } from "../styles/animations"
+import Divider from "../../elements/divider"
+import Inner from "../../elements/inner"
+import Content from "../../elements/content"
+import Shape from "../Shape"
+import { UpDown, UpDownWide } from "../../styles/animations"
 import AboutMDX from "../sections/about.mdx"
 
 const About = ({ offset }) => (

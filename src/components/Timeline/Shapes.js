@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import PropTypes from "prop-types"
 import Divider from "../../elements/divider"
 import Shape from "../Shape"
 import { UpDown, UpDownWide } from "../../styles/animations"
@@ -25,5 +26,10 @@ const TimelineShapes = ({ offset, clipPath }) => (
       <Shape icon="hexa" width={6} stroke color="icon_red" left="80%" top="70%" />
     </Divider>
 )
+
+TimelineShapes.propTypes = {
+  offset: PropTypes.number.isRequired,
+  clipPath: PropTypes.string
+}
 
 export default TimelineShapes

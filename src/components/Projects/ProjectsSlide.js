@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import React from "react"
+import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 import { Transition } from "react-spring/renderprops"
@@ -39,7 +40,7 @@ const Container = styled("div")`
   }
 `
 
-const ProjectSlide = ({ index, direction, handleNext, handlePrev }) => {
+const ProjectSlide = ({ index, direction, handleNext }) => {
   return (
     <div>
       <Container
@@ -75,7 +76,7 @@ const ProjectSlide = ({ index, direction, handleNext, handlePrev }) => {
                   overflow: "hidden",
                   width: "100%",
                   height: "100%",
-                  boxShadow: 'xl'
+                  boxShadow: "xl",
                 }}
               >
                 {React.createElement(testScreens[index])}
@@ -86,6 +87,12 @@ const ProjectSlide = ({ index, direction, handleNext, handlePrev }) => {
       </Container>
     </div>
   )
+}
+
+ProjectSlide.propTypes = {
+  index: PropTypes.number.isRequired,
+  direction: PropTypes.string.isRequired,
+  handleNext: PropTypes.func.isRequired,
 }
 
 export default ProjectSlide
