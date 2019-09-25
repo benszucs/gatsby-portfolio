@@ -1,3 +1,4 @@
+import React from "react"
 import dpImg from "../../static/dp.png"
 import museImg from "../../static/muse.png"
 import d2Img from "../../static/d2.png"
