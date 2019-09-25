@@ -4,31 +4,7 @@ import { jsx } from "theme-ui"
 import AnimCard from "../../elements/ui/animateCard"
 import Card from "../../elements/ui/Card"
 
-const data = [
-  {
-    title: "Project 1",
-    subtitle: [
-      "A fancy-schmancy project utilising all the hyped up modern tech you could want, but not necessarily need.",
-    ],
-    pills: ["JAMstack", "GatsbyJS", "Contentful", "Styled Components", "CMS"],
-  },
-  {
-    title: "Project 2",
-    subtitle: [
-      "A fancy-schmancy project utilising all the hyped up modern tech you could want, but not necessarily need.",
-    ],
-    pills: ["JAMstack", "GatsbyJS", "Contentful", "Styled Components", "CMS"],
-  },
-  {
-    title: "Project 3",
-    subtitle: [
-      "A fancy-schmancy project utilising all the hyped up modern tech you could want, but not necessarily need.",
-    ],
-    pills: ["JAMstack", "GatsbyJS", "Contentful", "Styled Components", "CMS"],
-  },
-]
-
-const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
+const ProjectsContent = ({ index, direction, data, handleNext, handlePrev }) => {
   return (
     <AnimCard index={index} direction={direction} speed="20">
       {data.map((item, idx) => {
@@ -39,6 +15,7 @@ const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
               title={item.title}
               subtitle={item.subtitle}
               pills={item.pills}
+              width="600px"
               buttons
               bg="background"
               handlePrev={handlePrev}
@@ -53,6 +30,7 @@ const ProjectsContent = ({ index, direction, handleNext, handlePrev }) => {
 }
 
 ProjectsContent.propTypes = {
+  data: PropTypes.array.isRequired,
   index: PropTypes.number.isRequired,
   direction: PropTypes.string.isRequired,
   handleNext: PropTypes.func.isRequired,

@@ -29,15 +29,15 @@ const data = [
     fullMark: 150,
   },
   {
-    subject: "ReactJS",
-    A: 100,
-    B: 130,
-    fullMark: 150,
-  },
-  {
     subject: "JAMstack",
     A: 90,
     B: 90,
+    fullMark: 150,
+  },
+  {
+    subject: "ReactJS",
+    A: 100,
+    B: 130,
     fullMark: 150,
   },
   {
@@ -53,11 +53,11 @@ class Chart extends PureComponent {
     const { fill, stroke, tick } = this.props
     return (
       <RadarChart
-        cx={300}
-        cy={250}
+        cx={200}
+        cy={200}
         outerRadius={150}
-        width={500}
-        height={500}
+        width={400}
+        height={400}
         data={data}
       >
         <PolarGrid />

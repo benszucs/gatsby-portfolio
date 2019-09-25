@@ -7,7 +7,7 @@ import Inner from "../../elements/inner"
 import Content from "../../elements/content"
 import Shapes from "./Shapes"
 import TimelineComp from "./TimelineComp"
-import Title from "../../elements/ui/Title"
+import data from "../../content/data"
 
 class Timeline extends React.Component {
   state = {
@@ -34,10 +34,11 @@ class Timeline extends React.Component {
         <Shapes offset={offset} />
         <Content speed={0.4} offset={offset} factor={1.5}>
           <Inner>
-            <Title title="Timeline" />
             <TimelineComp
               handleToggleIndex={this.handleToggleIndex}
               index={this.state.index}
+              data={data.timeline}
+              style={{ minHeight: "700px" }}
             />
           </Inner>
         </Content>

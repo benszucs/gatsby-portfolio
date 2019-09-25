@@ -10,6 +10,7 @@ import Shapes from "./Shapes"
 import ProjectsSlide from "./ProjectsSlide"
 import ProjectsContent from "./ProjectsContent"
 import { ParallaxLayer } from "react-spring/renderprops-addons.cjs"
+import data from '../../content/data'
 
 class Projects extends React.Component {
   state = {
@@ -18,12 +19,12 @@ class Projects extends React.Component {
   }
   handlePrev = e =>
     this.setState(state => ({
-      index: state.index === 0 ? 2 : state.index - 1,
+      index: state.index === 0 ? 3 : state.index - 1,
       direction: "prev",
     }))
   handleNext = e =>
     this.setState(state => ({
-      index: state.index === 2 ? 0 : state.index + 1,
+      index: state.index === 3 ? 0 : state.index + 1,
       direction: "next",
     }))
   render() {
@@ -45,6 +46,7 @@ class Projects extends React.Component {
             <ProjectsSlide
               index={index}
               direction={direction}
+              data={data.projects}
               handleNext={this.handleNext}
             />
           </Inner>
@@ -66,6 +68,7 @@ class Projects extends React.Component {
               direction={direction}
               handleNext={this.handleNext}
               handlePrev={this.handlePrev}
+              data={data.projects}
             />
           </ParallaxLayer>
         </Content>

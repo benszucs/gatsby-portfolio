@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Divider from "../elements/divider"
 import Inner from "../elements/inner"
 import Content from "../elements/content"
 import Shape from "./Shape"
 import { UpDown, UpDownWide } from "../styles/animations"
-import Intro from "../sections/intro.mdx"
+import data from '../content/data'
 
 const Hero = ({ offset }) => (
   <div>
@@ -32,7 +32,9 @@ const Hero = ({ offset }) => (
     </Divider>
     <Content sx={{ variant: `texts.bigger` }} speed={0.4} offset={offset}>
       <Inner>
-        <Intro />
+        <Styled.h1>{data.intro.title}</Styled.h1>
+        <Styled.h4>{data.intro.subtitle}</Styled.h4>
+        <Styled.p>{data.intro.text}</Styled.p>
       </Inner>
     </Content>
   </div>

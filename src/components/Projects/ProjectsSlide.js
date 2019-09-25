@@ -13,22 +13,15 @@ const TestScreen = styled("div")`
   justify-content: center;
   align-items: center;
   background-color: ${props => props.bgColor};
+  overflow: hidden;
+  border-radius: 10px;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left top;
+  }
 `
-
-const TestScreen1 = props => {
-  return <TestScreen bgColor="tomato">Im number 1</TestScreen>
-}
-
-const TestScreen2 = props => {
-  return <TestScreen bgColor="aqua">Im number 2</TestScreen>
-}
-
-const TestScreen3 = props => {
-  return <TestScreen bgColor="navy">Im number 3</TestScreen>
-}
-
-const testScreens = [TestScreen1, TestScreen2, TestScreen3]
-
 const Container = styled("div")`
   z-index: 49 !important;
   position: relative;
@@ -40,12 +33,12 @@ const Container = styled("div")`
   }
 `
 
-const ProjectSlide = ({ index, direction, handleNext }) => {
+const ProjectSlide = ({ index, direction, data, handleNext }) => {
   return (
     <div>
       <Container
         sx={{
-          height: ["200px", "200px", "300px", "400px"],
+          height: ["200px", "200px", "300px", "500px"],
           width: ["100%", "100%", "90%", "80%"],
         }}
       >
@@ -79,7 +72,9 @@ const ProjectSlide = ({ index, direction, handleNext }) => {
                   boxShadow: "xl",
                 }}
               >
-                {React.createElement(testScreens[index])}
+                <TestScreen>
+                  <img src={data[index].image} alt={data[index].title} />
+                </TestScreen>
               </div>
             </animated.div>
           )}
@@ -92,6 +87,7 @@ const ProjectSlide = ({ index, direction, handleNext }) => {
 ProjectSlide.propTypes = {
   index: PropTypes.number.isRequired,
   direction: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
   handleNext: PropTypes.func.isRequired,
 }
 

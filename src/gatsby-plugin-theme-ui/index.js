@@ -201,7 +201,6 @@ export default {
     mb: 1,
     color: "textMuted",
     cursor: "arrow",
-    fontSize: "80%",
   },
   smarties: {
     width: "50px",
