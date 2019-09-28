@@ -1,14 +1,13 @@
 /** @jsx jsx */
-import React from "react"
 import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 import { Transition } from "react-spring/renderprops"
 import { animated } from "react-spring"
-import d2Img from '../../../static/d2.png'
-import r2Img from '../../../static/r2.png'
-import museImg from '../../../static/muse.png'
-import dpImg from '../../../static/dp.png'
+import d2Img from '../../assets/d2.png'
+import r2Img from '../../assets/r2.png'
+import museImg from '../../assets/muse.png'
+import dpImg from '../../assets/dp.png'
 
 const TestScreen = styled("div")`
   width: 100%;
