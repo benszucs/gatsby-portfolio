@@ -1,9 +1,3 @@
-import React from "react"
-import dpImg from "../../static/dp.png"
-import museImg from "../../static/muse.png"
-import d2Img from "../../static/d2.png"
-import r2Img from "../../static/r2.png"
-
 const data = {
   intro: {
     title: "Hello, I'm Ben",
@@ -15,7 +9,6 @@ const data = {
     {
       title: "Deep Planet - Client Portal",
       link: "",
-      image: dpImg,
       subtitle: [
         "Developed front-end of crop surveying app for client.",
         "Designed app in line with Google's Material design.",
@@ -28,7 +21,6 @@ const data = {
     {
       title: "Muse - Website",
       link: "https://getmymuse.com",
-      image: museImg,
       subtitle: [
         "Designed & developed JAMstack website for fin-tech startup Muse.",
         "Integrated Mailchimp API for user sign-ups to app beta testing.",
@@ -46,7 +38,6 @@ const data = {
     {
       title: "builtbyR2 - Website",
       link: "https://builtbyr2.com",
-      image: r2Img,
       subtitle: [
         "Designed & developed multi-page JAMstack website with CMS integration.",
         "Built blogging system & content model with Contentful.",
@@ -58,7 +49,6 @@ const data = {
     {
       title: "D2 Alternative Investments - Website",
       link: "https://www.d2alt.com",
-      image: d2Img,
       subtitle: [
         "Designed & developed landing page with CMS integration.",
         "Worked closely with PM and editor to create an editor friendly website.",

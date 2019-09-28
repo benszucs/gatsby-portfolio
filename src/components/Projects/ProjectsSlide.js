@@ -5,6 +5,10 @@ import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 import { Transition } from "react-spring/renderprops"
 import { animated } from "react-spring"
+import d2Img from '../../../static/d2.png'
+import r2Img from '../../../static/r2.png'
+import museImg from '../../../static/muse.png'
+import dpImg from '../../../static/dp.png'
 
 const TestScreen = styled("div")`
   width: 100%;
@@ -32,6 +36,8 @@ const Container = styled("div")`
     height: 100%;
   }
 `
+
+const images = [dpImg, museImg, r2Img, d2Img ]
 
 const ProjectSlide = ({ index, direction, data, handleNext }) => {
   return (
@@ -73,7 +79,7 @@ const ProjectSlide = ({ index, direction, data, handleNext }) => {
                 }}
               >
                 <TestScreen>
-                  <img src={data[index].image} alt={data[index].title} />
+                  <img src={images[index]} alt={data[index].title} />
                 </TestScreen>
               </div>
             </animated.div>
