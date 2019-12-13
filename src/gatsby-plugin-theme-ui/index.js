@@ -198,7 +198,6 @@ export default {
   pills: {
     p: 1,
     mr: 1,
-    mb: 1,
     color: "textMuted",
     cursor: "arrow",
   },

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import { useColorMode, jsx } from "theme-ui"
 
 const dates = [
@@ -10,15 +10,15 @@ const dates = [
 ]
 
 const Smarties = ({ index, handleToggleIndex }) => {
-    const [colorMode] = useColorMode()
-    const isDark = colorMode === `dark`
+  const [colorMode] = useColorMode()
+  const isDark = colorMode === `dark`
   return (
     <ul
       index={index}
       sx={{
         position: "relative",
         display: "flex",
-        p: 0
+        p: 0,
       }}
     >
       <div
@@ -35,7 +35,7 @@ const Smarties = ({ index, handleToggleIndex }) => {
       {dates.map((x, i) => (
         <li
           key={i}
-          onMouseEnter={() => handleToggleIndex(i)}
+          onClick={() => handleToggleIndex(i)}
           sx={{
             minWidth: 100 / dates.length + "%",
             display: "flex",
@@ -47,8 +47,8 @@ const Smarties = ({ index, handleToggleIndex }) => {
             sx={{
               variant: `smarties`,
               color: () => {
-                  if(isDark) return `text`
-                  if(!isDark && index === i) return `white`
+                if (isDark) return `text`
+                if (!isDark && index === i) return `white`
               },
               backgroundColor: index === i ? `primary` : `background`,
             }}
@@ -63,7 +63,7 @@ const Smarties = ({ index, handleToggleIndex }) => {
 
 Smarties.propTypes = {
   index: PropTypes.number.isRequired,
-  handleToggleIndex: PropTypes.func.isRequired
+  handleToggleIndex: PropTypes.func.isRequired,
 }
 
 export default Smarties

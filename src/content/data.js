@@ -7,25 +7,34 @@ const data = {
   },
   projects: [
     {
-      title: "Deep Planet - Client Portal",
+      title: "Deep Planet",
       link: "",
-      subtitle: [
-        "Developed front-end of crop surveying app for client.",
-        "Designed app in line with Google's Material design.",
-        "Used Redux to manage asynchronous data flow from REST API.",
-        "Implemented interactive Google Maps to display satellite data.",
-        "Gained exposure to Jira and agile development practices.",
+      subtitle: "Webapp",
+      description:
+        "Deep planet team have built a platform which can analyse satellite, weather and ground data using artificial intelligence methods. Collaborating with a senior back-end developer we built two products for Deep Planet in the pilot stage of the application. An advanced grape farm monitoring platform that uses satellite data, ground data, human expertise and machine learning algorithm to predict grape yield, and a field map platform which identifies fields that are vineyards anywhere in the world.",
+      bullets: [
+        "Built client portal UI from scratch using ReactJS, using Google's material design library.",
+        "Implemented Redux state management with asynchronous data flow from REST API.",
+        "Set up serverless authentication back-end service using AWS Cognito",
+        "Integrated Google Maps API for use of interactive maps.",
+        "Gained exposure to Jira and agile software development practices.",
+        "Conducted technical research and cost analysis to meet product scope requirements.",
+        "Produced technical documentation detailing the scope of the application.",
       ],
       pills: ["ReactJS", "Redux", "AWS", "Google Maps API", "REST"],
     },
     {
-      title: "Muse - Website",
+      title: "Muse",
       link: "https://getmymuse.com",
-      subtitle: [
-        "Designed & developed JAMstack website for fin-tech startup Muse.",
-        "Integrated Mailchimp API for user sign-ups to app beta testing.",
-        "Performance & SEO optimized website.",
-        "Tested across all major browsers.",
+      subtitle: "Website",
+      description:
+        "Fintech startup, Muse is building a mobile application aimed at small business owners to bridge short term cash-flow gaps and minimize administrative headaches. I was contracted to transform their old static HTML & CSS based website to a modern JavaScript powered website with a content management system to make editing copy a breeze.",
+      bullets: [
+        "Worked with senior designer to build pixel perfect, responsive design from mock-ups.",
+        "Integrated Mailchimp API for sign-ups to application beta testing & mailing list.",
+        "Emphasized writing clean, modular and reusable code using Styled Components.",
+        "Optimized website performance as well as SEO & Google analytics.",
+        "Tested the website across all major browsers.",
       ],
       pills: [
         "GatsbyJS",
@@ -36,22 +45,29 @@ const data = {
       ],
     },
     {
-      title: "builtbyR2 - Website",
+      title: "builtbyR2",
       link: "https://builtbyr2.com",
-      subtitle: [
+      subtitle: "Website",
+      description:
+        "Technology agency builtbyR2 partners with businesses to solve their technological needs, offering end-to-end project completion and consultation. ",
+      bullets: [
         "Designed & developed multi-page JAMstack website with CMS integration.",
         "Built blogging system & content model with Contentful.",
         "Performance & SEO optimized website.",
         "Tested across all major browsers.",
+        "Used React Spring animation library and custom CSS3 animations.",
       ],
       pills: ["GatsbyJS", "GraphQl", "Contentful CMS", "Netlify", "Animations"],
     },
     {
-      title: "D2 Alternative Investments - Website",
+      title: "D2 Alternative Investments",
       link: "https://www.d2alt.com",
-      subtitle: [
+      subtitle: "Website",
+      description:
+        "D2 are specialists in alternative investments, principled life settlements, institutional execution and M&A consultancy.",
+      bullets: [
         "Designed & developed landing page with CMS integration.",
-        "Worked closely with PM and editor to create an editor friendly website.",
+        "Worked closely with PM & copywriter to create an editor friendly website.",
         "Performance & SEO optimized website.",
         "Tested across all major browsers.",
       ],
