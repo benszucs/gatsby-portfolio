@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const SVG = ({ box, fill }) => {
+const Graduate = ({ box, fill }) => {
   return (
     <svg
       height={box}
@@ -15,9 +15,9 @@ const SVG = ({ box, fill }) => {
   )
 }
 
-SVG.propTypes = {
+Graduate.propTypes = {
   box: PropTypes.string.isRequired,
   fill: PropTypes.string.isRequired,
 }
 
-export default SVG
+export default Graduate

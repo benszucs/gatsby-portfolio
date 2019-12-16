@@ -2,7 +2,10 @@
 import PropTypes from "prop-types"
 import { useColorMode, jsx } from "theme-ui"
 import Card from "../../elements/ui/Card"
-import SVG from "./SVG"
+import Graduate from "./SVG/Graduate"
+import SelfTaught from "./SVG/SelfTaught"
+import Freelance from "./SVG/Freelance"
+import FullStack from "./SVG/FullStack"
 import AnimCard from "../../elements/ui/animateCard"
 import Smarties from "./Smarties"
 import Title from "../../elements/ui/Title"
@@ -27,13 +30,25 @@ const Timeline = ({ index, data, handleToggleIndex, transform }) => {
           }}
         >
           <AnimCard index={index} direction="down" speed="20">
-            <SVG box="100px" fill={isDark ? "#196E6C" : "#b58900"} />
+            {index === 0 && (
+              <Graduate box="100px" fill={isDark ? "#196E6C" : "#b58900"} />
+            )}
+            {index === 1 && (
+              <SelfTaught box="100px" fill={isDark ? "#196E6C" : "#b58900"} />
+            )}
+            {index === 2 && (
+              <Freelance box="100px" fill={isDark ? "#196E6C" : "#b58900"} />
+            )}
+            {index === 3 && (
+              <FullStack box="100px" fill={isDark ? "#196E6C" : "#b58900"} />
+            )}
           </AnimCard>
 
           <div
             sx={{
               position: "relative",
               minHeight: "700px",
+              mt: 3,
             }}
           >
             <AnimCard index={index} direction="up" speed="20">

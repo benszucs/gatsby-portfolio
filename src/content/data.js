@@ -11,9 +11,9 @@ const data = {
       link: "",
       subtitle: "Webapp",
       description:
-        "Deep planet team have built a platform which can analyse satellite, weather and ground data using artificial intelligence methods. Collaborating with a senior back-end developer we built two products for Deep Planet in the pilot stage of the application. An advanced grape farm monitoring platform that uses satellite data, ground data, human expertise and machine learning algorithm to predict grape yield, and a field map platform which identifies fields that are vineyards anywhere in the world.",
+        "Collaborating with a senior back-end developer we built two products for Deep Planet in the pilot stage of the application. An advanced grape farm monitoring platform that uses satellite data, ground data, human expertise and machine learning algorithm to predict grape yield, and a field map platform which identifies fields that are vineyards anywhere in the world.",
       bullets: [
-        "Built client portal UI from scratch using ReactJS, using Google's material design library.",
+        "Built client portal UI using ReactJS and Google's material design library.",
         "Implemented Redux state management with asynchronous data flow from REST API.",
         "Set up serverless authentication back-end service using AWS Cognito",
         "Integrated Google Maps API for use of interactive maps.",
@@ -49,9 +49,8 @@ const data = {
       link: "https://builtbyr2.com",
       subtitle: "Website",
       description:
-        "Technology agency builtbyR2 partners with businesses to solve their technological needs, offering end-to-end project completion and consultation. ",
+        "Technology agency builtbyR2 partners with businesses to solve their technological needs, offering end-to-end project completion and consultation. I designed and developed this multi-page JAMstack website with CMS integration.",
       bullets: [
-        "Designed & developed multi-page JAMstack website with CMS integration.",
         "Built blogging system & content model with Contentful.",
         "Performance & SEO optimized website.",
         "Tested across all major browsers.",
@@ -64,9 +63,8 @@ const data = {
       link: "https://www.d2alt.com",
       subtitle: "Website",
       description:
-        "D2 are specialists in alternative investments, principled life settlements, institutional execution and M&A consultancy.",
+        "D2 are specialists in alternative investments, principled life settlements, institutional execution and M&A consultancy. I designed and developed this landing page powered by Contentful CMS.",
       bullets: [
-        "Designed & developed landing page with CMS integration.",
         "Worked closely with PM & copywriter to create an editor friendly website.",
         "Performance & SEO optimized website.",
         "Tested across all major browsers.",
@@ -122,9 +120,8 @@ const data = {
     {
       title: "The Full-stack Dev",
       subtitle: [
-        "I am currently working with a multi-disciplinary, agile team, where I am building the front-end of a client portal for an international client.",
-        "Gaining an appreciation for best practices and principles of software engineering. I am eager to keep levelling up.",
-        "In my spare time I am working through the FS course to eventually become a full-stack developer.",
+        "Currently working with a multi-disciplinary, agile team, where I am building the front-end of a client portal for an international client.",
+        "I'm looking to contribute to the tackling of big problems ideally working on software reaching a global audience and to specialize in client-side development, creating low-latency and high performance software solutions.",
       ],
     },
   ],

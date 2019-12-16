@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import styled from "@emotion/styled"
 import Divider from "../elements/divider"
 import Inner from "../elements/inner"
@@ -8,6 +8,7 @@ import Shape from "./Shape"
 import { UpDown, UpDownWide, waveAnimation } from "../styles/animations"
 import ContactMDX from "../sections/contact.mdx"
 import Footer from "./Footer"
+import Title from "../elements/ui/Title"
 
 const InnerWave = styled.div`
   path {
@@ -53,24 +54,127 @@ const Contact = ({ offset }) => (
     </Divider>
     <Content speed={0.4} offset={offset}>
       <Inner>
-        <ContactMDX />
+        <Styled.h2
+          sx={{
+            color: "heading",
+            mb: 2,
+          }}
+        >
+          Get in touch
+        </Styled.h2>
+        <Styled.p>
+          Say{" "}
+          <a
+            href="mailto: benszucs@gmail.com"
+            sx={{ color: "primary", textDecoration: "none" }}
+          >
+            Hi
+          </a>{" "}
+          or find me on other platforms:{" "}
+          <a
+            href="https://linkedin.com/in/bendeguz-szucs"
+            sx={{ color: "primary", textDecoration: "none" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          ,{" "}
+          <a
+            href="https://github.com/benszucs/"
+            sx={{ color: "primary", textDecoration: "none" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github
+          </a>
+          ,{" "}
+          <a
+            href="https://codepen.io/benszucs"
+            sx={{ color: "primary", textDecoration: "none" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CodePen
+          </a>{" "}
+          &{" "}
+          <a
+            href="https://codesandbox.io/u/benszucs"
+            sx={{ color: "primary", textDecoration: "none" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CodeSandbox
+          </a>
+        </Styled.p>
       </Inner>
       <Footer />
     </Content>
     <Divider speed={0.1} offset={offset}>
       <UpDown>
-        <Shape icon="hexa" hiddenMobile stroke width={4} color="icon_red" left="70%" top="20%" />
-        <Shape icon="triangle" width={4} stroke color="icon_blue" left="25%" top="5%" />
+        <Shape
+          icon="hexa"
+          hiddenMobile
+          stroke
+          width={4}
+          color="icon_red"
+          left="70%"
+          top="20%"
+        />
+        <Shape
+          icon="triangle"
+          width={4}
+          stroke
+          color="icon_blue"
+          left="25%"
+          top="5%"
+        />
       </UpDown>
       <UpDownWide>
-        <Shape icon="triangle" width={6} stroke color="icon_yellow" left="95%" top="50%" />
+        <Shape
+          icon="triangle"
+          width={6}
+          stroke
+          color="icon_yellow"
+          left="95%"
+          top="50%"
+        />
         <Shape icon="box" width={6} color="icon_green" left="85%" top="15%" />
-        <Shape icon="hexa" hiddenMobile stroke width={8} color="icon_red" left="45%" top="10%" />
+        <Shape
+          icon="hexa"
+          hiddenMobile
+          stroke
+          width={8}
+          color="icon_red"
+          left="45%"
+          top="10%"
+        />
       </UpDownWide>
-      <Shape icon="triangle" width={6} stroke color="icon_blue" left="4%" top="20%" />
-      <Shape icon="hexa" width={8} stroke color="icon_green" left="70%" top="60%" />
+      <Shape
+        icon="triangle"
+        width={6}
+        stroke
+        color="icon_blue"
+        left="4%"
+        top="20%"
+      />
+      <Shape
+        icon="hexa"
+        width={8}
+        stroke
+        color="icon_green"
+        left="70%"
+        top="60%"
+      />
       <Shape icon="box" width={4} color="icon_yellow" left="20%" top="30%" />
-      <Shape icon="hexa" width={4} stroke color="icon_red" left="80%" top="70%" />
+      <Shape
+        icon="hexa"
+        width={4}
+        stroke
+        color="icon_red"
+        left="80%"
+        top="70%"
+      />
     </Divider>
   </div>
 )
